@@ -17,3 +17,12 @@ describe("calcularTotal", () => {
     expect(calcularTotal(3,2,"CA")).toEqual(6.495);
   });
 });
+
+describe("calcularTotal", () => {
+  it("deberia calcular el total segun la cantidad, precio dados e impuesto segund estado", () => {
+    expect(calcularTotal(3,2,"UT")).toEqual(6.399);
+    expect(calcularTotal(3,2,"AL")).toEqual(6.24);
+    expect(calcularTotal(3,2,"TX")).toEqual(6.375);
+  });
+});
+

@@ -1,3 +1,19 @@
+function descuentoPorPrecioTotal(precioTotal){
+  var descuentoPrecio = 0;
+  if(precioTotal >= 30000){
+      descuentoPrecio = 0.15;
+  }else if(precioTotal >= 10000){
+    descuentoPrecio = 0.1;
+  }else if(precioTotal >= 7000){
+    descuentoPrecio = 0.07;
+  }
+  else if(precioTotal >= 3000){
+    descuentoPrecio = 0.05;
+  }else if (precioTotal >= 1000){
+    descuentoPrecio = 0.03;
+  }
+  return descuentoPrecio;
+}
 
 function impuestoPorEstado(estado){
   var impuestoEstado = 0.0825;
@@ -28,8 +44,9 @@ function calcularTotal(cantidad, precio=1, estado="") {
     impuesto = impuestoPorEstado(estado);
   }
   var total = cantidad*precio;
-  var totalConImpuesto = total + impuesto*total;
-  return totalConImpuesto;
+  var totalConDescuento = total - total*descuentoPorPrecioTotal(total);
+  var totalConImpuestoYDescuento = totalConDescuento + impuesto*totalConDescuento;
+  return totalConImpuestoYDescuento;
 }
 
 export default calcularTotal;

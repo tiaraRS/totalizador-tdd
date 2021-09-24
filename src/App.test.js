@@ -19,10 +19,17 @@ describe("calcularTotal", () => {
 });
 
 describe("calcularTotal", () => {
-  it("deberia calcular el total segun la cantidad, precio dados e impuesto segund estado", () => {
+  it("deberia calcular el total segun la cantidad, precio dados e impuesto segun estado", () => {
     expect(calcularTotal(3,2,"UT")).toEqual(6.399);
     expect(calcularTotal(3,2,"AL")).toEqual(6.24);
     expect(calcularTotal(3,2,"TX")).toEqual(6.375);
+  });
+});
+
+describe("calcularTotal", () => {
+  it("deberia calcular el total segun la cantidad, precio dados, impuesto segun estado y descuento segun precio total", () => {
+    expect(calcularTotal(3,2000,"UT")).toEqual(6079.05);
+    expect(calcularTotal(50,500,"AL")).toEqual(23400);
   });
 });
 

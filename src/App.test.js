@@ -5,3 +5,9 @@ describe("calcularTotal", () => {
     expect(calcularTotal(3)).toEqual(3);
   });
 });
+
+describe("calcularTotal", () => {
+  it("deberia calcular el total segun la cantidad y precio dado", () => {
+    expect(calcularTotal(3,2)).toEqual(6);
+  });
+});
